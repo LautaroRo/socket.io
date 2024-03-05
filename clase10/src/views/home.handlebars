@@ -1,0 +1,27 @@
+<div>
+    <h1>home</h1>
+
+    <form id="form" action="/" method="post">
+        <input type="text" name="username">
+        <input type="number" name="age">
+        <button type="submit">Enviar</button>
+    </form>
+
+<div id="log">
+    
+</div>
+    {{#if user}}
+    <div style="display: flex; align-items:end; justify-content: end;flex-direction:column">
+                <h1>Usuarios almacenados</h1>
+        {{#each user as |obj|}}
+        <div style="display: flex; flex-direction:row; align-items:center">
+            <p id="log">{{obj.user.username}} {{obj.user.age}}</p>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/home.js"></script>
